@@ -85,8 +85,10 @@ class OpenHeartElement extends HTMLElement {
   }
 
   async send(event: MouseEvent | KeyboardEvent) {
-    if (this.disabled) return
     if (event instanceof KeyboardEvent && !['Enter', ' '].includes(event.key)) return
+
+    if (this.disabled) return
+    if (this.getAttribute('aria-busy') === 'true') return
     if (this.hasReacted()) return
 
     this.removeAttribute('errored')
