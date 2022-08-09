@@ -17,17 +17,34 @@
       transition: transform .3s;
     }
 
-    open-heart:hover,
-    open-heart:focus {
+    .off {
+      transition: opacity .3s;
+    }
+
+    .on {
+      position: absolute;
+      z-index: 1;
+      opacity: 0;
+      transform: scale(0);
+      transition: transform .3s;
+    }
+
+    open-heart:not([disabled]):hover,
+    open-heart:not([disabled]):focus {
       transform: scale(1.2);
     }
 
-    [aria-pressed] {
-      color: #f00;
+    [aria-pressed] .on { 
+      transform: scale(1);
+      opacity: 1;
     }
 
+    [aria-pressed] .off { opacity: 0; }
+
+    [aria-pressed] { color: #f00; }
+
     [errored] {
-      border: 1px solid #f00;
+      opacity: .5;
     }
   </style>
 
@@ -35,14 +52,14 @@
 <body>
   <h1>&lt;open-heart&gt;</h1>
   <h2>Demo</h2>
-  <open-heart href="https://httpbin.org/post" for="1" emoji="❤️">♥</open-heart>
-  <open-heart href="https://httpbin.org/post" for="2" emoji="❤️">♥</open-heart>
-  <open-heart href="https://httpbin.org/post" for="3" emoji="❤️">♥</open-heart>
-  <open-heart href="https://httpbin.org/post" for="4" emoji="❤️">♥</open-heart>
-  <open-heart href="https://httpbin.org/post" for="5" emoji="❤️">♥</open-heart>
-  <open-heart href="https://httpbin.org/post" for="6" emoji="❤️">♥</open-heart>
-  <open-heart href="https://httpbin.org/post" for="7" emoji="❤️">♥</open-heart>
-  <open-heart href="https://httpbin.org/post" for="8" emoji="❤️">♥</open-heart>
+  <open-heart href="https://httpbin.org/post" for="1" emoji="❤️"><span class="on">♥</span><span class="off">♡</span></open-heart>
+  <open-heart href="https://httpbin.org/post" for="2" emoji="❤️"><span class="on">♥</span><span class="off">♡</span></open-heart>
+  <open-heart href="https://httpbin.org/post" for="3" emoji="❤️"><span class="on">♥</span><span class="off">♡</span></open-heart>
+  <open-heart href="https://httpbin.org/post" for="4" emoji="❤️"><span class="on">♥</span><span class="off">♡</span></open-heart>
+  <open-heart href="https://httpbin.org/post" for="5" emoji="❤️"><span class="on">♥</span><span class="off">♡</span></open-heart>
+  <open-heart href="https://httpbin.org/post" for="6" emoji="❤️"><span class="on">♥</span><span class="off">♡</span></open-heart>
+  <open-heart href="https://httpbin.org/post" for="7" emoji="❤️"><span class="on">♥</span><span class="off">♡</span></open-heart>
+  <open-heart href="https://httpbin.org/post" for="8" emoji="❤️"><span class="on">♥</span><span class="off">♡</span></open-heart>
 
   <h2>Reset</h2>
   <button onclick="localStorage.removeItem('_open_heart'); location.reload();">Clear localStorage</button>
