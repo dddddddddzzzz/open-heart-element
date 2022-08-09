@@ -23,7 +23,7 @@ emoji: ❤️
 
 and sets a key in `localStorage` to remember that a heart has been sent for this object ID.
 
-Note: This element does not come with any styling.
+Note: This element does not come with any styling. Feel free to take [whatever that's in the demo](/demo.css).
 
 ### Attributes
 

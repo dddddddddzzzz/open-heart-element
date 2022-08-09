@@ -8,54 +8,7 @@
   <!-- <script src="./dist/index.js" defer type="module"></script> -->
   <script src="https://unpkg.com/open-heart-element" type="module" defer></script>
   <link href="https://unpkg.com/muan.css" rel="stylesheet" type="text/css">
-
-  <style>
-    open-heart {
-      display: inline-flex;
-      padding: 0.4em 0.8em;
-      cursor: pointer;
-      font-size: 20px;
-      transition: transform .3s;
-    }
-
-    .off {
-      transition: opacity .3s;
-    }
-
-    .on {
-      position: absolute;
-      z-index: 1;
-      opacity: 0;
-      transform: scale(0);
-      transition: transform .3s;
-    }
-
-    open-heart:not([disabled]):hover,
-    open-heart:not([disabled]):focus {
-      transform: scale(1.2);
-    }
-
-    [aria-pressed="true"] .on { 
-      transform: scale(1);
-      opacity: 1;
-    }
-
-    [aria-pressed="true"] .off { opacity: 0; }
-
-    [aria-pressed="true"] { color: #f00; }
-
-    [aria-busy="true"] { animation: pulsate .4s infinite; }
-
-    @keyframes pulsate {
-      0% { transform: scale(1) }
-      100% { transform: scale(1.2) }
-    }
-
-    [errored] {
-      opacity: .5;
-    }
-  </style>
-
+  <link href="./demo.css" rel="stylesheet" type="text/css">
 </head>
 <body>
   <h1>&lt;open-heart&gt;</h1>
