@@ -35,14 +35,21 @@
       transform: scale(1.2);
     }
 
-    [aria-pressed] .on { 
+    [aria-pressed="true"] .on { 
       transform: scale(1);
       opacity: 1;
     }
 
-    [aria-pressed] .off { opacity: 0; }
+    [aria-pressed="true"] .off { opacity: 0; }
 
-    [aria-pressed] { color: #f00; }
+    [aria-pressed="true"] { color: #f00; }
+
+    [aria-busy="true"] { animation: pulsate .4s infinite; }
+
+    @keyframes pulsate {
+      0% { transform: scale(1) }
+      100% { transform: scale(1.2) }
+    }
 
     [errored] {
       opacity: .5;
