@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>open-heart</title>
   <script src="./dist/index.js" defer type="module"></script>
   <link href="https://unpkg.com/muan.css" rel="stylesheet" type="text/css">
 
@@ -34,6 +34,7 @@
 </head>
 <body>
   <h1>&lt;open-heart&gt;</h1>
+  <h2>Demo</h2>
   <open-heart href="https://httpbin.org/post" for="1" emoji="❤️">♥</open-heart>
   <open-heart href="https://httpbin.org/post" for="2" emoji="❤️">♥</open-heart>
   <open-heart href="https://httpbin.org/post" for="3" emoji="❤️">♥</open-heart>
@@ -42,5 +43,8 @@
   <open-heart href="https://httpbin.org/post" for="6" emoji="❤️">♥</open-heart>
   <open-heart href="https://httpbin.org/post" for="7" emoji="❤️">♥</open-heart>
   <open-heart href="https://httpbin.org/post" for="8" emoji="❤️">♥</open-heart>
+
+  <h2>Reset</h2>
+  <button onclick="localStorage.removeItem('_open_heart'); location.reload();">Clear localStorage</button>
 </body>
 </html>
