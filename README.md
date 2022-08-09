@@ -4,6 +4,8 @@ A button to POST an emoji to an endpoint.
 
 It's fairly straightforward to set up an endpoint with [Cloudflare Workers & Cloudflare KV](https://developers.cloudflare.com/workers/platform/pricing/). Here's [less than 30 lines of code](https://gist.github.com/muan/388430d0ed03c55662e72bb98ff28f03).
 
+See it in action at [at the bottom of this page](https://muan.co/posts/presence) shown as plain text prompt "Liked this post?".
+
 ## Usage
 
 ```html
