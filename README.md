@@ -38,3 +38,7 @@ Note: This element does not come with any styling.
 - `[disabled]`: Present when a heart has been sent.
 - `[aria-pressed="true"]`: Present when a heart has been sent.
 - `[aria-busy="true"]`: Present when a heart is being sent.
+
+### API
+
+- `openHeart.getCount()`: Sends a GET request with `?id=${this.id}` and sets `<open-heart count="0">` if successful.

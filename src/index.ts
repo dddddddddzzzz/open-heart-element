@@ -73,6 +73,17 @@ class OpenHeartElement extends HTMLElement {
     localStorage.setItem(this.KEY, hearts.join(','))
   }
 
+  async getCount() {
+    const url = new URL(this.href)
+    url.searchParams.set('id', this.id)
+    const response = await fetch(url)
+
+    if (!response.ok) return
+
+    const count = await response.text()
+    this.setAttribute('count', count)
+  }
+
   async send(event: MouseEvent | KeyboardEvent) {
     if (this.disabled) return
     if (event instanceof KeyboardEvent && !['Enter', ' '].includes(event.key)) return
