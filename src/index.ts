@@ -12,8 +12,14 @@ class OpenHeartElement extends HTMLElement {
     this.setAttribute('role', 'button')
     this.setAttribute('aria-busy', 'false')
 
+    if (!this.emoji || !this.id || !this.href) {
+      console.error(this, 'missing required attributes')
+      this.toggleAttribute('disabled', true)
+      return
+    }
+
     if (!this.validateEmoji()) {
-      console.error('emoji attribute incorrect')
+      console.error(this, 'emoji attribute incorrect')
       return
     }
 
@@ -32,6 +38,10 @@ class OpenHeartElement extends HTMLElement {
 
   get id(): string {
     return this.getAttribute('for')!
+  }
+
+  get href(): string {
+    return this.getAttribute('href')!
   }
 
   get emoji(): string {
@@ -76,7 +86,7 @@ class OpenHeartElement extends HTMLElement {
 
     this.setAttribute('aria-busy', 'true')
 
-    const response = await fetch(this.getAttribute('href')!, {
+    const response = await fetch(this.href, {
       method: 'post',
       body: formData
     })
