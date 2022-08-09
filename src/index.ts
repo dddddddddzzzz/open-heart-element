@@ -89,7 +89,7 @@ class OpenHeartElement extends HTMLElement {
 
     if (this.disabled) return
     if (this.getAttribute('aria-busy') === 'true') return
-    if (this.hasReacted()) return
+    if (this.hasReacted()) return this.setReacted()
 
     this.removeAttribute('errored')
 
