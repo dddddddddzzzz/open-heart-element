@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./dist/index.js" defer type="module"></script>
+  <link href="https://unpkg.com/muan.css" rel="stylesheet" type="text/css">
+
+  <style>
+    open-heart {
+      display: inline-flex;
+      padding: 0.4em 0.8em;
+      cursor: pointer;
+      font-size: 20px;
+      transition: transform .3s;
+    }
+
+    open-heart:hover,
+    open-heart:focus {
+      transform: scale(1.2);
+    }
+
+    [aria-pressed] {
+      color: #f00;
+    }
+
+    [errored] {
+      border: 1px solid #f00;
+    }
+  </style>
+
+</head>
+<body>
+  <h1>&lt;open-heart&gt;</h1>
+  <open-heart href="https://httpbin.org/post" for="1" emoji="❤️">♥</open-heart>
+  <open-heart href="https://httpbin.org/post" for="2" emoji="❤️">♥</open-heart>
+  <open-heart href="https://httpbin.org/post" for="3" emoji="❤️">♥</open-heart>
+  <open-heart href="https://httpbin.org/post" for="4" emoji="❤️">♥</open-heart>
+  <open-heart href="https://httpbin.org/post" for="5" emoji="❤️">♥</open-heart>
+  <open-heart href="https://httpbin.org/post" for="6" emoji="❤️">♥</open-heart>
+  <open-heart href="https://httpbin.org/post" for="7" emoji="❤️">♥</open-heart>
+  <open-heart href="https://httpbin.org/post" for="8" emoji="❤️">♥</open-heart>
+</body>
+</html>
