@@ -19,6 +19,8 @@ emoji: ❤️
 
 and sets a key in `localStorage` to remember that a heart has been sent for this object ID.
 
+Note: This element does not come with any styling.
+
 ### Attributes
 
 #### Functional
