@@ -76,6 +76,7 @@ class OpenHeartElement extends HTMLElement {
   async getCount() {
     const url = new URL(this.href)
     url.searchParams.set('id', this.id)
+    url.searchParams.set('emoji', this.emoji)
     const response = await fetch(url)
 
     if (!response.ok) return

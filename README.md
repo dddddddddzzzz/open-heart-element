@@ -43,4 +43,4 @@ Note: This element does not come with any styling. Feel free to take [whatever t
 
 ### API
 
-- `openHeart.getCount()`: Sends a GET request to `href` with `?id=${this.id}` and sets `<open-heart count="0">` if successful.
+- `openHeart.getCount()`: Sends a GET request to `href` with `?id=${this.id}&emoji=${this.emoji}` and sets `<open-heart count="0">` if successful.
