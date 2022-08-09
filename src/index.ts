@@ -42,6 +42,10 @@ class OpenHeartElement extends HTMLElement {
     return `${this.id}${this.emoji}`
   }
 
+  get disabled(): boolean {
+    return this.hasAttribute('disabled')
+  }
+
   hasReacted(): boolean {
     const hearts = (localStorage.getItem(this.KEY) || '').split(',')
     return hearts.includes(this.key)
@@ -60,6 +64,7 @@ class OpenHeartElement extends HTMLElement {
   }
 
   async send(event: MouseEvent | KeyboardEvent) {
+    if (this.disabled) return
     if (event instanceof KeyboardEvent && !['Enter', ' '].includes(event.key)) return
     if (this.hasReacted()) return
 
