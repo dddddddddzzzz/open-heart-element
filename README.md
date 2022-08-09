@@ -7,6 +7,10 @@ It's fairly straightforward to set up an endpoint with [Cloudflare Workers & Clo
 ## Usage
 
 ```html
+<!-- Include `OpenHeartElement` -->
+<script src="https://unpkg.com/open-heart-element" type="module" defer></script>
+
+<!-- Render `<open-heart>` -->
 <open-heart href="https://httpbin.org/post" for="object-id" emoji="❤️">♥</open-heart>
 ```
 
