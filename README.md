@@ -21,6 +21,13 @@ and sets a key in `localStorage` to remember that a heart has been sent for this
 
 ### Attributes
 
+#### Functional
+
+- `href`: Required. Specify a URL where a POST request would be sent to.
+- `for`: Required. Specify an object ID.
+- `emoji`: Required. Specify an emoji.
+
+#### States
 - `[errored]`: Present when POST response comes back with a not ok response.
 - `[disabled]`: Present when a heart has been sent.
 - `[aria-pressed="true"]`: Present when a heart has been sent.
