@@ -1,10 +1,12 @@
 {
   "name": "open-heart-element",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "dist/index.js",
   "type": "module",
   "types": "dist/index.d.ts",
-  "files": ["dist/index.d.ts"],
+  "files": [
+    "dist/index.d.ts"
+  ],
   "scripts": {
     "start": "tsc -w",
     "prepare": "tsc -d && terser dist/index.js --compress --mangle -o dist/index.js"
