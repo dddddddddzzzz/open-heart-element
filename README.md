@@ -25,7 +25,13 @@ emoji: ❤️
 
 and sets a key in `localStorage` to remember that a heart has been sent for this object ID.
 
-Note: This element does not come with any styling. Feel free to take [whatever that's in the demo](/demo.css).
+### Styling
+
+This element does not come with any styling. Feel free to take whatever that's on the demo page.
+
+If you wrote some cool CSS for this, feel free to send a pull request with a demo page and I can list it here for others to reference:
+
+- [Demo](https://muan.github.io/open-heart-element/), [CSS](/demo.css) by [@muan](https://github.com/muan)
 
 ### Attributes
 
