@@ -98,7 +98,7 @@ class OpenHeartElement extends HTMLElement {
 
     this.setAttribute('aria-busy', 'true')
 
-    const response = await fetch(this.href, { method: 'post' })
+    const response = await fetch(url.toString(), { method: 'post' })
 
     this.setAttribute('aria-busy', 'false')
 
