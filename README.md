@@ -6,6 +6,8 @@ It's fairly straightforward to set up an endpoint with [Cloudflare Workers & Clo
 
 See it in action at [at the bottom of this page](https://muan.co/posts/presence#like-prompt) shown as plain text prompt "Liked this post?".
 
+🚧 Highly experimental. Tag a version to avoid unexpected changes.
+
 ## Usage
 
 ```html
@@ -13,17 +15,10 @@ See it in action at [at the bottom of this page](https://muan.co/posts/presence#
 <script src="https://unpkg.com/open-heart-element" type="module" defer></script>
 
 <!-- Render `<open-heart>` -->
-<open-heart href="https://httpbin.org/post" for="object-id" emoji="❤️">♥</open-heart>
+<open-heart href="https://httpbin.org/post?id=x" emoji="❤️">♥</open-heart>
 ```
 
-This sends a POST request with a form data payload:
-
-```
-id: object-id
-emoji: ❤️
-```
-
-and sets a key in `localStorage` to remember that a heart has been sent for this object ID.
+This sends a POST to the `href` with `emoji=❤️` and sets a key in `localStorage` to remember that a heart has been sent for this `href`.
 
 ### Styling
 
@@ -38,7 +33,6 @@ If you wrote some cool CSS for this, feel free to send a pull request with a dem
 #### Functional
 
 - `href`: Required. Specify a URL where a POST request would be sent to.
-- `for`: Required. Specify an object ID.
 - `emoji`: Required. Specify an emoji.
 
 #### States
@@ -49,4 +43,4 @@ If you wrote some cool CSS for this, feel free to send a pull request with a dem
 
 ### API
 
-- `openHeart.getCount()`: Sends a GET request to `href` with `?id=${this.id}&emoji=${this.emoji}` and sets `<open-heart count="0">` if successful.
+- `openHeart.getCount()`: Sends a GET request to `href` with `emoji=${this.emoji}` and sets `<open-heart count="${count}">` if successful.

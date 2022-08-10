@@ -12,7 +12,7 @@ class OpenHeartElement extends HTMLElement {
     this.setAttribute('role', 'button')
     this.setAttribute('aria-busy', 'false')
 
-    if (!this.emoji || !this.id || !this.href) {
+    if (!this.emoji || !this.href) {
       console.error(this, 'missing required attributes')
       this.toggleAttribute('disabled', true)
       return
@@ -49,7 +49,7 @@ class OpenHeartElement extends HTMLElement {
   }
 
   get key(): string {
-    return `${this.id}${this.emoji}`
+    return `${this.emoji}@${encodeURIComponent(this.href)}`
   }
 
   get disabled(): boolean {
@@ -68,14 +68,13 @@ class OpenHeartElement extends HTMLElement {
   }
 
   saveReaction() {
-    const hearts = (localStorage.getItem(this.KEY) || '').split(',')
+    const hearts = (localStorage.getItem(this.KEY) || '').split(',').filter(s => s)
     hearts.push(this.key)
     localStorage.setItem(this.KEY, hearts.join(','))
   }
 
   async getCount() {
     const url = new URL(this.href)
-    url.searchParams.set('id', this.id)
     url.searchParams.set('emoji', this.emoji)
     const response = await fetch(url)
 
@@ -94,16 +93,12 @@ class OpenHeartElement extends HTMLElement {
 
     this.removeAttribute('errored')
 
-    const formData = new FormData()
-    formData.set('id', this.id)
-    formData.set('emoji', this.emoji)
+    const url = new URL(this.href)
+    url.searchParams.set('emoji', this.emoji)
 
     this.setAttribute('aria-busy', 'true')
 
-    const response = await fetch(this.href, {
-      method: 'post',
-      body: formData
-    })
+    const response = await fetch(this.href, { method: 'post' })
 
     this.setAttribute('aria-busy', 'false')
 
