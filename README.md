@@ -2,7 +2,7 @@
 
 A button to POST an emoji to an endpoint.
 
-See it in action at [at the bottom of this page](https://muan.co/posts/presence#like-prompt) shown as plain text prompt "Liked this post?".
+See it in action at [at the bottom of this page](https://muan.co/posts/presence#like-prompt) shown as plain text prompt "Like this post?".
 
 🚧 Highly experimental. Tag a version to avoid unexpected changes.
 
