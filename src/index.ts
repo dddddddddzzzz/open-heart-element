@@ -70,14 +70,15 @@ class OpenHeartElement extends HTMLElement {
   }
 
   async getCount() {
-    const url = new URL(this.href)
-    url.searchParams.set('emoji', this.emoji)
-    const response = await fetch(url)
-
+    const response = await fetch(this.href)
     if (!response.ok) return
 
-    const count = await response.text()
-    this.setAttribute('count', count)
+    let json: {[key: string]: number} = {}
+    try {
+      json = await response.json()
+    } catch { /* do nothing */ }
+
+    this.setAttribute('count', Number(json[this.emoji] || 0).toString())
   }
 
   async send(event: MouseEvent | KeyboardEvent) {
@@ -88,13 +89,7 @@ class OpenHeartElement extends HTMLElement {
     if (this.hasReacted()) return this.setReacted()
 
     this.removeAttribute('errored')
-
-    const url = new URL(this.href)
-    url.searchParams.set('emoji', this.emoji)
-
-    this.setAttribute('aria-busy', 'true')
-
-    const response = await fetch(url.toString(), { method: 'post' })
+    const response = await fetch(this.href, { method: 'post', body: this.emoji })
 
     this.setAttribute('aria-busy', 'false')
 
