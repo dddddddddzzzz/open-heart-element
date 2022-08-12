@@ -1,6 +1,6 @@
 # &lt;open-heart&gt;
 
-A button to POST an emoji to an endpoint.
+A button to POST an emoji as the body to an endpoint.
 
 See it in action at [at the bottom of this page](https://muan.co/posts/presence#like-prompt) shown as plain text prompt "Like this post?".
 
@@ -21,7 +21,7 @@ It's fairly straightforward to set up an endpoint, here are some examples:
 <open-heart href="https://httpbin.org/post?id=x" emoji="❤️">♥</open-heart>
 ```
 
-This sends a POST to the `href` with `emoji=❤️` and sets a key in `localStorage` to remember that a heart has been sent for this `href`.
+This sends a POST to the `href` with `❤️` in the body, and sets a key in `localStorage` to remember that a heart has been sent for this `href`.
 
 ### Styling
 
@@ -46,4 +46,4 @@ If you wrote some cool CSS for this, feel free to send a pull request with a dem
 
 ### API
 
-- `openHeart.getCount()`: Sends a GET request to `href` with `emoji=${this.emoji}` and sets `<open-heart count="${count}">` if successful.
+- `openHeart.getCount()`: Sends a GET request to `href`, expects a JSON response like `{'${this.emoji}': count}` and sets `<open-heart count="${count}">` if successful.
