@@ -36,10 +36,6 @@ class OpenHeartElement extends HTMLElement {
     return EmojiPattern.test(this.emoji)
   }
 
-  get id(): string {
-    return this.getAttribute('for')!
-  }
-
   get href(): string {
     return this.getAttribute('href')!
   }
