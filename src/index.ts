@@ -70,7 +70,7 @@ class OpenHeartElement extends HTMLElement {
   }
 
   async getCount() {
-    const response = await fetch(this.href)
+    const response = await fetch(this.href, {headers: {'Accept': 'application/json'}})
     if (!response.ok) return
 
     let json: {[key: string]: number} = {}
