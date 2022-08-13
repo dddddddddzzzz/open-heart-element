@@ -39,7 +39,6 @@ If you wrote some cool CSS for this, feel free to send a pull request with a dem
 - `emoji`: Required. Specify an emoji.
 
 #### States
-- `[errored]`: Present when POST response comes back with a not ok response.
 - `[disabled]`: Present when a heart has been sent.
 - `[aria-pressed="true"]`: Present when a heart has been sent.
 - `[aria-busy="true"]`: Present when a heart is being sent.
