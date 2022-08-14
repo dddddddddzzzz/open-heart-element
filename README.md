@@ -1,15 +1,8 @@
 # &lt;open-heart&gt;
 
-A button to POST an emoji as the body to an endpoint.
-
-See it in action at [at the bottom of this page](https://muan.co/posts/presence#like-prompt) shown as plain text prompt "Like this post?".
+A button for the [`Open Heart Protocol`](https://github.com/mochokidae/OpenHeart).
 
 🚧 Highly experimental. Tag a version to avoid unexpected changes.
-
-It's fairly straightforward to set up an endpoint, here are some examples:
-
-- [Using Cloudflare Workers & Cloudflare KV](https://developers.cloudflare.com/workers/platform/pricing/) with [less than 30 lines of code](https://gist.github.com/muan/388430d0ed03c55662e72bb98ff28f03).
-- [A Node server w/ a flat file database (hosted on Glitch).](https://glitch.com/edit/#!/open-heart-server-demo)
 
 ## Usage
 
