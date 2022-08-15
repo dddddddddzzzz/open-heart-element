@@ -96,6 +96,7 @@ class OpenHeartElement extends HTMLElement {
     this.setAttribute('aria-busy', 'false')
     this.saveReaction()
     this.setReacted()
+    this.dispatchEvent(new CustomEvent('open-heart', {bubbles: true}))
   }
 }
 

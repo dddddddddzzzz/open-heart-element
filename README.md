@@ -39,3 +39,7 @@ If you wrote some cool CSS for this, feel free to send a pull request with a dem
 ### API
 
 - `openHeart.getCount()`: Sends a GET request to `href`, expects a JSON response like `{'${this.emoji}': count}` and sets `<open-heart count="${count}">` if successful.
+
+### Event
+
+- `open-heart`: Bubbles. This is dispatched after a reaction is sent.
