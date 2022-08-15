@@ -91,7 +91,7 @@ class OpenHeartElement extends HTMLElement {
     if (this.getAttribute('aria-busy') === 'true') return
     if (this.hasReacted()) return this.setReacted()
 
-    this.setAttribute('aria-busy', 'false')
+    this.setAttribute('aria-busy', 'true')
     await fetch(this.href, { method: 'post', body: this.emoji, mode: 'no-cors' })
     this.setAttribute('aria-busy', 'false')
     this.saveReaction()
