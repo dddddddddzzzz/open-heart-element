@@ -32,11 +32,16 @@ class OpenHeartElement extends HTMLElement {
   }
 
   validateEmoji(): boolean {
-    const segments = Array.from(new Intl.Segmenter(navigator.language || 'en', { granularity: 'grapheme' }).segment(this.emoji))
-    const emoji = segments.length > 0 ? segments[0].segment : null
-    if (this.emoji != emoji) return false
+    if ('Segmenter' in Intl) {
+      const segments = Array.from(new Intl.Segmenter(navigator.language || 'en', { granularity: 'grapheme' }).segment(this.emoji))
+      const emoji = segments.length > 0 ? segments[0].segment : false
+      if (this.emoji != emoji) return false
+      return /\p{Emoji}/u.test(emoji)
+    } else {
+      const match = this.emoji.match(/\p{Emoji}/u)
+      return !!(match && match[0])
+    }
 
-    return /\p{Emoji}/u.test(emoji)
   }
 
   get href(): string {
