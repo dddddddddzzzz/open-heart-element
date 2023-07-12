@@ -8,7 +8,7 @@ A button for the [`Open Heart Protocol`](https://github.com/mochokidae/OpenHeart
 
 ```html
 <!-- Include `OpenHeartElement` -->
-<script src="https://unpkg.com/open-heart-element" type="module" defer></script>
+<script src="https://unpkg.com/open-heart-element" type="module"></script>
 
 <!-- Render `<open-heart>` -->
 <open-heart href="https://httpbin.org/post?id=x" emoji="❤️">♥</open-heart>
