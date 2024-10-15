@@ -16,6 +16,10 @@ A button for the [`Open Heart Protocol`](https://github.com/mochokidae/OpenHeart
 
 This sends a POST to the `href` with `❤️` in the body, and sets a key in `localStorage` to remember that a heart has been sent for this `href`.
 
+### Public API
+
+If you want to try this out but don't want to set up the server component yet, we provide a public OpenHeart API. See the [repository](https://github.com/dddddddddzzzz/api-oh) for more details.
+
 ### Styling
 
 This element does not come with any styling. Feel free to take whatever that's on the demo page.
