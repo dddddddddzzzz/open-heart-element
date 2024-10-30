@@ -11,24 +11,18 @@ A button for the [`Open Heart Protocol`](https://github.com/mochokidae/OpenHeart
 <script src="https://unpkg.com/open-heart-element" type="module"></script>
 
 <!-- Render `<open-heart>` -->
-<open-heart href="https://httpbin.org/post?id=x" emoji="❤️">♥</open-heart>
+<open-heart 
+  href="https://api.oh.dddddddddzzzz.org/github.com/dddddddddzzzz/open-heart-element" 
+  emoji="❤️">
+  ♥
+</open-heart>
 ```
 
 This sends a POST to the `href` with `❤️` in the body, and sets a key in `localStorage` to remember that a heart has been sent for this `href`.
 
-### Public API
+### OpenHeart endpoint
 
-If you want to try this out but don't want to set up the server component yet, we provide a public OpenHeart API. Simply copy and paste the following snippet and swap out `example.com` with your domain, and `index` with your page identifier (if you have one).
-
-```html
-<open-heart 
-  href="https://api.oh.dddddddddzzzz.org/example.com/index" 
-  emoji="👍">
-  👍
-</open-heart>
-```
-
-See the [repository](https://github.com/dddddddddzzzz/api-oh) for details.
+Check out [`Open Heart Protocol - Server code`](https://github.com/dddddddddzzzz/OpenHeart?tab=readme-ov-file#server-code).
 
 ### Styling
 
